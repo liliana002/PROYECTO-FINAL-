@@ -111,27 +111,27 @@ def procesar_comando(chat_id, data):
         telegram_enviar(chat_id, msg3)
         time.sleep(1)
         telegram_enviar(chat_id, msg4)
-        print("✅ /start")
+        print(" /start")
     
     elif b'/ingresar' in data:
         cfg.ingresar_paciente()
         telegram_enviar(chat_id, "Paciente INGRESADO - Sistema ACTIVO - Todos los sensores ON")
-        print("✅ /ingresar")
+        print(" /ingresar")
     
     elif b'/retirar' in data:
         cfg.retirar_paciente()
         telegram_enviar(chat_id, "Paciente RETIRADO - Sensor de peso OFF")
-        print("✅ /retirar")
+        print(" /retirar")
     
     elif b'/activar' in data:
         cfg.activar_sistema()
         telegram_enviar(chat_id, "Sistema ACTIVADO")
-        print("✅ /activar")
+        print(" /activar")
     
     elif b'/apagar' in data:
         cfg.desactivar_sistema()
         telegram_enviar(chat_id, "Sistema APAGADO - Todos los sensores OFF")
-        print("✅ /apagar")
+        print(" /apagar")
     
     elif b'/estado' in data:
         s = "ON" if cfg.sistema_activo else "OFF"
@@ -142,17 +142,17 @@ def procesar_comando(chat_id, data):
             telegram_enviar(chat_id, f"Sistema {s} - Paciente {p} - Temp {t}C - Hum {h}% - Luz {luz}")
         except:
             telegram_enviar(chat_id, f"Sistema {s} - Paciente {p}")
-        print("✅ /estado")
+        print(" /estado")
     
     elif b'/sensor_dht_on' in data:
         cfg.activar_sensor('dht')
         telegram_enviar(chat_id, "Sensor Temperatura/Humedad ACTIVADO")
-        print("✅ /sensor_dht_on")
+        print(" /sensor_dht_on")
     
     elif b'/sensor_dht_off' in data:
         cfg.desactivar_sensor('dht')
         telegram_enviar(chat_id, "Sensor Temperatura/Humedad DESACTIVADO")
-        print("✅ /sensor_dht_off")
+        print(" /sensor_dht_off")
     
     elif b'/sensor_peso_on' in data:
         if cfg.paciente_presente:
@@ -160,42 +160,42 @@ def procesar_comando(chat_id, data):
             telegram_enviar(chat_id, "Sensor de Peso ACTIVADO")
         else:
             telegram_enviar(chat_id, "Primero debe ingresar un paciente con /ingresar")
-        print("✅ /sensor_peso_on")
+        print(" /sensor_peso_on")
     
     elif b'/sensor_peso_off' in data:
         cfg.desactivar_sensor('peso')
         telegram_enviar(chat_id, "Sensor de Peso DESACTIVADO")
-        print("✅ /sensor_peso_off")
+        print(" /sensor_peso_off")
     
     elif b'/sensor_luz_on' in data:
         cfg.activar_sensor('luz')
         telegram_enviar(chat_id, "Sensor de Luz ACTIVADO")
-        print("✅ /sensor_luz_on")
+        print(" /sensor_luz_on")
     
     elif b'/sensor_luz_off' in data:
         cfg.desactivar_sensor('luz')
         telegram_enviar(chat_id, "Sensor de Luz DESACTIVADO")
-        print("✅ /sensor_luz_off")
+        print(" /sensor_luz_off")
     
     elif b'/sensor_prox_on' in data:
         cfg.activar_sensor('proximidad')
         telegram_enviar(chat_id, "Sensor de Proximidad ACTIVADO")
-        print("✅ /sensor_prox_on")
+        print(" /sensor_prox_on")
     
     elif b'/sensor_prox_off' in data:
         cfg.desactivar_sensor('proximidad')
         telegram_enviar(chat_id, "Sensor de Proximidad DESACTIVADO")
-        print("✅ /sensor_prox_off")
+        print(" /sensor_prox_off")
     
     elif b'/sensor_panico_on' in data:
         cfg.activar_sensor('panico')
         telegram_enviar(chat_id, "Boton de Panico ACTIVADO")
-        print("✅ /sensor_panico_on")
+        print(" /sensor_panico_on")
     
     elif b'/sensor_panico_off' in data:
         cfg.desactivar_sensor('panico')
         telegram_enviar(chat_id, "Boton de Panico DESACTIVADO")
-        print("✅ /sensor_panico_off")
+        print(" /sensor_panico_off")
     
     elif b'/set ' in data:
         try:
@@ -215,7 +215,7 @@ def procesar_comando(chat_id, data):
                         telegram_enviar(chat_id, f"Parametro invalido: {parametro}")
         except:
             telegram_enviar(chat_id, "Uso: /set parametro valor - Ej: /set temp_max 28")
-        print("✅ /set")
+        print(" /set")
     
     elif b'/umbral' in data:
         msg1 = "Parametros disponibles:"
@@ -232,7 +232,7 @@ def procesar_comando(chat_id, data):
         telegram_enviar(chat_id, msg4)
         time.sleep(1)
         telegram_enviar(chat_id, msg5)
-        print("✅ /umbral")
+        print(" /umbral")
     
     elif b'/ayuda' in data or b'/help' in data:
         msg1 = "COMANDOS PRINCIPALES:"
@@ -249,7 +249,7 @@ def procesar_comando(chat_id, data):
         telegram_enviar(chat_id, msg4)
         time.sleep(1)
         telegram_enviar(chat_id, msg5)
-        print("✅ /ayuda")
+        print(" /ayuda")
 
 # =============================================
 # API PARA PC (CORREGIDA)
@@ -460,9 +460,9 @@ ip_esp = wlan.ifconfig()[0]
 print("\n" + "="*50)
 print("ESP32 + PC - Sistema Completo")
 print("="*50)
-print(f"✅ Telegram: Activo")
-print(f"✅ API: http://{ip_esp}:8080")
-print(f"   👆 USA ESTA IP EN dashboard.html")
+print(f" Telegram: Activo")
+print(f" API: http://{ip_esp}:8080")
+print(f"    USA ESTA IP EN dashboard.html")
 print("="*50 + "\n")
 
 try:
@@ -496,4 +496,5 @@ while True:
         break
     except Exception as e:
         gc.collect()
+
         time.sleep(1)
