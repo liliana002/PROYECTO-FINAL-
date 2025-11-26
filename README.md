@@ -28,7 +28,7 @@ El sistema alerta en tiempo real sobre condiciones críticas como la temperatura
 - Envía comandos vía Telegram y observa alertas.
 - Simula sensores, presiona botón de pánico y verifica actuadores como el boton de panico.
 
-- ## ESTRUCTURA
+- ## 4. ESTRUCTURA
 - `main.py`: Script principal que integra todos los modulos del sistema.
 - `config_sistema.py`: Configuración central, umbrales, Telegram.
 - `boot.py`: inicia automaticamente el wifi y servicios.
