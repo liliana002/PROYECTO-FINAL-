@@ -42,7 +42,7 @@ El sistema alerta en tiempo real sobre condiciones críticas como la temperatura
 - Actuadores: `actuador_luz.py`: Control de iluminación.
 - `actuador_puerta.py`: Control de apertura/cierre de puerta.
 - `buzzer.py`: Control de alarma sonora.
-- 
+  
 - Comunicaicon : `bot_telegram.py`: bot completo de telegram.
 -  `boot.py`: wifi
 
