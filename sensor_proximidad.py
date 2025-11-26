@@ -36,7 +36,7 @@ def medir_distancia():
         duracion = time_pulse_us(ECHO, 1, 30000)  # timeout 30 ms
     except Exception as e:
         # Si falla la medición, devolvemos distancia alta para no activar la puerta
-        print("⚠️ time_pulse_us error:", e)
+        print(" time_pulse_us error:", e)
         return 999.0
 
     # Manejo de retornos no válidos
@@ -83,3 +83,4 @@ def ciclo_continuo():
             puerta_abierta = False
 
         time.sleep(0.2)
+
